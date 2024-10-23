@@ -7,5 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: docker build 
-        run: docker build -t nodeimage .
+        uses: docker/build-push-action@v2
+        with:
+          content: ./
+          file: ./Dockerfile
       
