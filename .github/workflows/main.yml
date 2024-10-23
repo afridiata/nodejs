@@ -19,4 +19,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: aataafridi3/nodeimage:v1
+
+      - name: deploy the the app
+        run: kubectl apply -f deployment.yml
       
