@@ -1,0 +1,14 @@
+name: Node.js CI Project
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run build --if-present
+      - run: npm test
+
+      - name: docker build 
+        run: docker build -t nodeimage .
+      
